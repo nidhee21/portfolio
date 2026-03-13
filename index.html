@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nidhee Jadhav — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet"/>
+
+  <!-- ── CSS FILES ──
+       Each file controls one part of the site.
+       Edit the matching file to change that section's style.
+  -->
+  <link rel="stylesheet" href="css/base.css"/>          <!-- Variables, reset, shared utils -->
+  <link rel="stylesheet" href="css/cursor.css"/>        <!-- Liquid blob cursor -->
+  <link rel="stylesheet" href="css/nav.css"/>           <!-- Navigation bar -->
+  <link rel="stylesheet" href="css/hero.css"/>          <!-- Hero section -->
+  <link rel="stylesheet" href="css/about.css"/>         <!-- About section -->
+  <link rel="stylesheet" href="css/skills.css"/>        <!-- Skills section -->
+  <link rel="stylesheet" href="css/projects.css"/>      <!-- Projects section -->
+  <link rel="stylesheet" href="css/certifications.css"/><!-- Certifications section -->
+  <link rel="stylesheet" href="css/contact.css"/>       <!-- Contact section & footer -->
+  <link rel="stylesheet" href="css/responsive.css"/>    <!-- Tablet & mobile breakpoints -->
+</head>
+<body>
+
+<!-- SVG Goo Filter (powers the liquid cursor effect) -->
+<svg style="position:fixed;width:0;height:0;z-index:-1">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="goo"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- Liquid cursor elements -->
+<div class="cursor-blob" id="cursorBlob"></div>
+<div class="cursor-dot"  id="cursorDot"></div>
+
+<!-- Particle canvas background -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a href="#hero" class="nav-logo">NJ.</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about"          onclick="closeMenu()">About</a></li>
+    <li><a href="#skills"         onclick="closeMenu()">Skills</a></li>
+    <li><a href="#projects"       onclick="closeMenu()">Projects</a></li>
+    <li><a href="#certifications" onclick="closeMenu()">Certs</a></li>
+    <li><a href="#contact"        onclick="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTIONS
+     Each section lives in its own file inside /sections/
+     Open that file to edit the content of that section.
+     ════════════════════════════════════════════════════ -->
+
+<!-- Hero → edit: sections/hero.html -->
+<section id="hero">
+  <div class="blob" style="width:500px;height:500px;background:rgba(247,37,133,0.08);top:-100px;left:-150px"></div>
+  <div class="blob" style="width:400px;height:400px;background:rgba(76,201,240,0.06);bottom:0;left:30%"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Cybersecurity Student &amp; Developer</span>
+    </div>
+    <h1 class="hero-name">
+      <span class="line1">Nidhee</span>
+      <span class="line2">Jadhav.</span>
+    </h1>
+    <div class="typing-wrap">
+      I'm <span id="typed-text"></span><span class="cursor-blink"></span>
+    </div>
+    <div class="terminal-box">
+      <div class="terminal-bar">
+        <span class="t-dot" style="background:#ff5f57"></span>
+        <span class="t-dot" style="background:#febc2e"></span>
+        <span class="t-dot" style="background:#28c840"></span>
+        <span class="t-title">nidhee@portfolio ~</span>
+      </div>
+      <div class="terminal-body">
+        <div class="t-line">
+          <span class="t-prompt">nidhee@portfolio</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
+          <span class="t-cmd">whoami</span>
+        </div>
+        <div class="t-output">
+          <div class="t-row"><span class="t-key">name</span><span class="t-eq">=</span><span class="t-val">"Nidhee Rajendra Jadhav"</span></div>
+          <div class="t-row"><span class="t-key">role</span><span class="t-eq">=</span><span class="t-val">"Cybersecurity Student &amp; Developer"</span></div>
+          <div class="t-row"><span class="t-key">education</span><span class="t-eq">=</span><span class="t-val">"B.E. CS (Cybersecurity) · SGPA 9/10"</span></div>
+          <div class="t-row"><span class="t-key">location</span><span class="t-eq">=</span><span class="t-val">"Mumbai, Maharashtra, India"</span></div>
+          <div class="t-row"><span class="t-key">focus</span><span class="t-eq">=</span><span class="t-val">["Ethical Hacking", "Pentesting", "Frontend Dev"]</span></div>
+          <div class="t-row"><span class="t-key">status</span><span class="t-eq">=</span><span class="t-val t-green">"Open to opportunities ✓"</span></div>
+        </div>
+        <div class="t-line t-cursor-line">
+          <span class="t-prompt">nidhee@portfolio</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
+          <span class="t-blink">▋</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-cards">
+    <div class="h-card">
+      <div class="h-card-label">🎓 Education</div>
+      <div class="h-card-val">B.E. Computer Science (Cybersecurity)</div>
+      <div class="h-card-sub">Mumbai University · Expected May 2028</div>
+    </div>
+    <div class="h-card">
+      <div class="h-card-label">💼 Experience</div>
+      <div class="h-card-val">Computer Instructor @ SmartByte</div>
+      <div class="h-card-sub">March 2024 – July 2024 · Mumbai</div>
+    </div>
+    <div class="h-card">
+      <div class="h-card-label">📍 Based In</div>
+      <div class="h-card-val">Mumbai, Maharashtra, India</div>
+    </div>
+  </div>
+</section>
+
+<!-- About → edit: sections/about.html -->
+<section id="about">
+  <div class="blob" style="width:600px;height:600px;background:rgba(114,9,183,0.07);top:0;right:-200px"></div>
+  <div class="sec-tag fade-up">
+    <span class="sec-tag-num">01</span>
+    <div class="sec-tag-line"></div>
+    <span class="sec-tag-label">About</span>
+  </div>
+  <h2 class="sec-title fade-up delay-1">Building a career at the<br><span class="grad-text">intersection of code &amp; security.</span></h2>
+  <div class="about-layout">
+    <div class="about-bio fade-up delay-1">
+      <p>Specializing in <strong>Cybersecurity &amp; IoT</strong>, focused on building strong fundamentals in network security, cryptography, and Python.</p>
+      <p>Actively learning through hands-on practice, coursework, and self-study — breaking down cybersecurity concepts into simple explanations and sharing the journey along the way.</p>
+      <p>Beyond tech — into <strong>communication, leadership, anchoring, and content creation</strong> — skills I plan to weave into my cybersecurity career.</p>
+      <div class="glow-divider"></div>
+    </div>
+    <div class="stats-grid fade-up delay-2">
+      <div class="stat-card sc1"><div class="stat-num">9/10</div><div class="stat-lbl">Current SGPA</div></div>
+      <div class="stat-card sc2"><div class="stat-num">94%</div><div class="stat-lbl">Java NPTEL Gold + Elite</div></div>
+      <div class="stat-card sc3"><div class="stat-num">2nd</div><div class="stat-lbl">Java Quiz Competition</div></div>
+      <div class="stat-card sc4"><div class="stat-num">SIH</div><div class="stat-lbl">Smart India Hackathon 2025</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills → edit: sections/skills.html -->
+<section id="skills">
+  <div class="blob" style="width:500px;height:500px;background:rgba(76,201,240,0.05);bottom:0;left:-100px"></div>
+  <div class="sec-tag fade-up">
+    <span class="sec-tag-num">02</span>
+    <div class="sec-tag-line"></div>
+    <span class="sec-tag-label">What I Know</span>
+  </div>
+  <h2 class="sec-title fade-up delay-1"><span class="grad-text">Tools &amp; technologies</span><br>I work with.</h2>
+  <div class="skills-grid">
+    <div class="skill-card fade-up delay-1">
+      <span class="sk-icon">💻</span>
+      <div class="sk-name">Programming</div>
+      <div class="skill-pills">
+        <span class="pill">C/C++</span>
+        <span class="pill">Java</span>
+        <span class="pill">Python</span>
+        <span class="pill">HTML</span>
+        <span class="pill">CSS</span>
+        <span class="pill">SQL</span>
+      </div>
+    </div>
+    <div class="skill-card fade-up delay-2">
+      <span class="sk-icon">🛡️</span>
+      <div class="sk-name">Security Tools</div>
+      <div class="skill-pills">
+        <span class="pill">Kali Linux</span>
+        <span class="pill">Nmap</span>
+        <span class="pill">Metasploit</span>
+        <span class="pill">Splunk</span>
+        <span class="pill">TryHackMe</span>
+        <span class="pill">HackTheBox</span>
+      </div>
+    </div>
+    <div class="skill-card fade-up delay-3">
+      <span class="sk-icon">🌐</span>
+      <div class="sk-name">Networking</div>
+      <div class="skill-pills">
+        <span class="pill">TCP/IP</span>
+        <span class="pill">DNS</span>
+        <span class="pill">HTTP</span>
+        <span class="pill">Port Scanning</span>
+        <span class="pill">Packet Analysis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects → edit: sections/projects.html -->
+<section id="projects">
+  <div class="blob" style="width:600px;height:600px;background:rgba(67,97,238,0.07);top:0;right:-150px"></div>
+  <div class="sec-tag fade-up">
+    <span class="sec-tag-num">03</span>
+    <div class="sec-tag-line"></div>
+    <span class="sec-tag-label">What I've Built</span>
+  </div>
+  <h2 class="sec-title fade-up delay-1"><span class="grad-text">Featured</span><br>Projects.</h2>
+  <div class="projects-grid">
+    <div class="proj-card fade-up delay-1">
+      <div class="proj-mockup">
+        <div class="mockup-bar">
+          <span class="mbar-dot" style="background:#ff5f57"></span>
+          <span class="mbar-dot" style="background:#febc2e"></span>
+          <span class="mbar-dot" style="background:#28c840"></span>
+          <div class="mbar-url">plants-vs-zombies.java</div>
+        </div>
+        <div class="mockup-screen">
+          <div class="mockup-sidebar">
+            <div class="msb-item active">🌻 Garden</div>
+            <div class="msb-item">🧟 Zombies</div>
+            <div class="msb-item">⚡ Score</div>
+            <div class="msb-item">🛡️ Defense</div>
+          </div>
+          <div class="mockup-content">
+            <div class="mc-hero-card">
+              <div class="mc-tag">Tower Defense</div>
+              <div class="mc-tag" style="background:rgba(6,214,160,0.15);color:var(--teal);border-color:rgba(6,214,160,0.3)">Java · OOP</div>
+              <div class="mc-title">Plants vs Zombies</div>
+              <div class="mc-desc">A fully playable tower-defense game built with Java Swing. Features enemy AI, plant placement, collision detection &amp; health logic.</div>
+              <div class="mc-actions">
+                <div class="mc-btn">▶ Play</div>
+                <div class="mc-btn mc-btn-ghost">⟨/⟩ Code</div>
+              </div>
+            </div>
+            <div class="mc-thumb-row">
+              <div class="mc-thumb" style="background:linear-gradient(135deg,rgba(6,214,160,0.3),rgba(67,97,238,0.3))">🌻</div>
+              <div class="mc-thumb" style="background:linear-gradient(135deg,rgba(247,37,133,0.3),rgba(114,9,183,0.3))">🧟</div>
+              <div class="mc-thumb" style="background:linear-gradient(135deg,rgba(255,190,11,0.3),rgba(251,133,0,0.3))">⚡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-info">
+        <div class="proj-tags">
+          <span class="ptag ptag-green">Java</span>
+          <span class="ptag ptag-green">OOP</span>
+          <span class="ptag ptag-green">Java Swing</span>
+          <span class="ptag ptag-green">Game Dev</span>
+        </div>
+        <h3 class="proj-title">Plants vs Zombies — Java Game</h3>
+        <p class="proj-desc">Built a simple tower-defense game using Java and OOP concepts. Implemented enemy movement, plant placement, and basic collision/health logic. Designed the UI using Java Swing with interactive elements.</p>
+        <div class="proj-meta">
+          <span class="proj-meta-item">🧑‍💻 Team Project</span>
+          <span class="proj-meta-item">🎮 Game Development</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications → edit: sections/certifications.html -->
+<section id="certifications">
+  <div class="blob" style="width:500px;height:500px;background:rgba(255,190,11,0.05);top:0;right:-100px"></div>
+  <div class="sec-tag fade-up">
+    <span class="sec-tag-num">04</span>
+    <div class="sec-tag-line"></div>
+    <span class="sec-tag-label">Achievements</span>
+  </div>
+  <h2 class="sec-title fade-up delay-1"><span class="grad-text">Certifications</span><br>&amp; recognitions.</h2>
+  <div class="cert-grid">
+    <div class="cert-card cc1 fade-up delay-1">
+      <div class="cert-icon-wrap">🏅</div>
+      <div>
+        <div class="cert-body-title">NPTEL — Programming in Java</div>
+        <div class="cert-body-desc">Achieved 94% score with Gold + Elite distinction. One of the highest-ranked certifications in the national online course program.</div>
+      </div>
+    </div>
+    <div class="cert-card cc2 fade-up delay-2">
+      <div class="cert-icon-wrap">🥈</div>
+      <div>
+        <div class="cert-body-title">2nd Prize — Java Quiz Competition</div>
+        <div class="cert-body-desc">Secured 2nd place at the inter-department level Java Quiz, demonstrating strong command of object-oriented programming concepts.</div>
+      </div>
+    </div>
+    <div class="cert-card cc3 fade-up delay-1">
+      <div class="cert-icon-wrap">🔐</div>
+      <div>
+        <div class="cert-body-title">Certificate in Basics of Cybersecurity</div>
+        <div class="cert-body-desc">Covered foundational concepts including threats, attacks, network security, and defense mechanisms for modern digital systems.</div>
+      </div>
+    </div>
+    <div class="cert-card cc4 fade-up delay-2">
+      <div class="cert-icon-wrap">🚀</div>
+      <div>
+        <div class="cert-body-title">Smart India Hackathon (SIH) 2025</div>
+        <div class="cert-body-desc">Participated and contributed ideas and technical inputs on real-world problem statements at India's largest student hackathon.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact → edit: sections/contact.html -->
+<section id="contact">
+  <div class="blob" style="width:600px;height:600px;background:rgba(247,37,133,0.06);bottom:-100px;left:-100px"></div>
+  <div class="sec-tag fade-up">
+    <span class="sec-tag-num">05</span>
+    <div class="sec-tag-line"></div>
+    <span class="sec-tag-label">Contact Me</span>
+  </div>
+  <h2 class="sec-title fade-up delay-1"><span class="grad-text">Let's Connect.</span><br>Open to opportunities &amp; collaborations.</h2>
+  <div class="contact-layout">
+    <div class="fade-up delay-1">
+      <h3>Let's build something together.</h3>
+      <p>Whether it's a collaboration, opportunity, or just a conversation about cybersecurity — my inbox is always open.</p>
+      <div class="contact-item ci1">
+        <div class="ci-icon">📞</div>
+        <div><div class="ci-lbl">Phone</div><div class="ci-val">8828665896</div></div>
+      </div>
+      <div class="contact-item ci2">
+        <div class="ci-icon">✉️</div>
+        <div>
+          <div class="ci-lbl">Email</div>
+          <div class="ci-val"><a href="https://mail.google.com/mail/?view=cm&to=nidhjadhav72@gmail.com" target="_blank">nidhjadhav72@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item ci3">
+        <div class="ci-icon">🔗</div>
+        <div>
+          <div class="ci-lbl">LinkedIn</div>
+          <div class="ci-val"><a href="https://www.linkedin.com/in/nidhee-jadhav-800520300" target="_blank">nidhee-jadhav-800520300</a></div>
+        </div>
+      </div>
+      <div class="contact-item ci4">
+        <div class="ci-icon">📍</div>
+        <div><div class="ci-lbl">Location</div><div class="ci-val">Mumbai, Maharashtra, India</div></div>
+      </div>
+    </div>
+    <form class="contact-form fade-up delay-2" onsubmit="handleSubmit(event)" action="https://formspree.io/f/maqpbyny" method="POST">
+      <div class="form-row">
+        <div class="fg"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="jane@email.com" required></div>
+      </div>
+      <div class="fg"><label>Subject</label><input type="text" name="subject" placeholder="What's this about?"></div>
+      <div class="fg"><label>Message</label><textarea name="message" placeholder="Hi Nidhee, I'd love to connect..." required></textarea></div>
+      <button type="submit" class="btn-submit">Send Message →</button>
+      <div id="form-ok" style="display:none;font-size:0.88rem;font-weight:600;background:linear-gradient(90deg,var(--teal),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+        ✓ Message sent! I'll get back to you soon.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">NJ.</div>
+  <div class="footer-copy">© 2025 <span class="footer-grad">Nidhee Rajendra Jadhav</span> · Mumbai</div>
+</footer>
+
+<!-- ── JS FILES ──
+     Each file controls one feature.
+     Edit the matching file to change that behaviour.
+-->
+<script src="js/particles.js"></script>   <!-- Animated particle background -->
+<script src="js/cursor.js"></script>      <!-- Liquid blob cursor -->
+<script src="js/typing.js"></script>      <!-- Typing animation in hero -->
+<script src="js/nav.js"></script>         <!-- Hamburger menu + scroll observer -->
+<script src="js/form.js"></script>        <!-- Contact form submission -->
+
+</body>
+</html>
