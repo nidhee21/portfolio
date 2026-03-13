@@ -81,6 +81,6 @@ Have a project idea, opportunity, or just want to talk cybersecurity?
 
 Made by **Nidhee Rajendra Jadhav**
 
-*© 2025 · Mumbai, India*
+*© 2026 · Mumbai, India*
 
 </div>
