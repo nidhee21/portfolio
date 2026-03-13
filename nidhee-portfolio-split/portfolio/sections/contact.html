@@ -1,0 +1,94 @@
+<!-- ══════════════════════════════════════════
+     CONTACT SECTION  —  sections/contact.html
+     Edit your contact details here
+     ════════════════════════════════════════ -->
+<section id="contact">
+  <div class="blob" style="width:600px;height:600px;background:rgba(247,37,133,0.06);bottom:-100px;left:-100px"></div>
+
+  <div class="sec-tag fade-up">
+    <span class="sec-tag-num">05</span>
+    <div class="sec-tag-line"></div>
+    <span class="sec-tag-label">Contact Me</span>
+  </div>
+
+  <h2 class="sec-title fade-up delay-1">
+    <span class="grad-text">Let's Connect.</span><br>Open to opportunities &amp; collaborations.
+  </h2>
+
+  <div class="contact-layout">
+
+    <!-- Left: contact info -->
+    <div class="fade-up delay-1">
+      <h3>Let's build something together.</h3>
+      <p>Whether it's a collaboration, opportunity, or just a conversation about cybersecurity — my inbox is always open.</p>
+
+      <!-- ✏️ Edit your contact details below -->
+      <div class="contact-item ci1">
+        <div class="ci-icon">📞</div>
+        <div>
+          <div class="ci-lbl">Phone</div>
+          <div class="ci-val">8828665896</div>
+        </div>
+      </div>
+
+      <div class="contact-item ci2">
+        <div class="ci-icon">✉️</div>
+        <div>
+          <div class="ci-lbl">Email</div>
+          <div class="ci-val">
+            <a href="https://mail.google.com/mail/?view=cm&to=nidhjadhav72@gmail.com" target="_blank">
+              nidhjadhav72@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-item ci3">
+        <div class="ci-icon">🔗</div>
+        <div>
+          <div class="ci-lbl">LinkedIn</div>
+          <div class="ci-val">
+            <a href="https://www.linkedin.com/in/nidhee-jadhav-800520300" target="_blank">
+              nidhee-jadhav-800520300
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-item ci4">
+        <div class="ci-icon">📍</div>
+        <div>
+          <div class="ci-lbl">Location</div>
+          <div class="ci-val">Mumbai, Maharashtra, India</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: contact form -->
+    <form class="contact-form fade-up delay-2" onsubmit="handleSubmit(event)" action="https://formspree.io/f/maqpbyny" method="POST">
+      <div class="form-row">
+        <div class="fg">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="fg">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="jane@email.com" required>
+        </div>
+      </div>
+      <div class="fg">
+        <label>Subject</label>
+        <input type="text" name="subject" placeholder="What's this about?">
+      </div>
+      <div class="fg">
+        <label>Message</label>
+        <textarea name="message" placeholder="Hi Nidhee, I'd love to connect..." required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message →</button>
+      <div id="form-ok" style="display:none;font-size:0.88rem;font-weight:600;background:linear-gradient(90deg,var(--teal),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+        ✓ Message sent! I'll get back to you soon.
+      </div>
+    </form>
+
+  </div>
+</section>

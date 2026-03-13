@@ -1,0 +1,66 @@
+/* ============================================
+   skills.css — Skills Section
+   ============================================ */
+
+#skills { background: linear-gradient(160deg, #1a0a3d 0%, #0d1a4a 100%); }
+
+.skills-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1.5rem;
+}
+
+.skill-card {
+  background:  rgba(255,255,255,0.04);
+  border:      1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding:     2.25rem;
+  position:    relative;
+  overflow:    hidden;
+  transition:  transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.skill-card:hover { transform: translateY(-8px); }
+
+/* Coloured top border per card */
+.skill-card::before      { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+.skill-card:nth-child(1)::before { background: linear-gradient(90deg, var(--pink), var(--violet)); }
+.skill-card:nth-child(2)::before { background: linear-gradient(90deg, var(--yellow), var(--orange)); }
+.skill-card:nth-child(3)::before { background: linear-gradient(90deg, var(--teal), #00b4d8); }
+
+.skill-card:nth-child(1):hover { border-color:rgba(247,37,133,0.3); box-shadow:0 20px 60px rgba(247,37,133,0.1),inset 0 0 40px rgba(247,37,133,0.03); }
+.skill-card:nth-child(2):hover { border-color:rgba(255,190,11,0.3);  box-shadow:0 20px 60px rgba(255,190,11,0.1), inset 0 0 40px rgba(255,190,11,0.03); }
+.skill-card:nth-child(3):hover { border-color:rgba(6,214,160,0.3);   box-shadow:0 20px 60px rgba(6,214,160,0.1),  inset 0 0 40px rgba(6,214,160,0.03); }
+
+.sk-icon { font-size: 2.4rem; margin-bottom: 1.25rem; display: block; }
+
+.sk-name {
+  font-family:    var(--display);
+  font-size:      1rem;
+  font-weight:    700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom:  1.5rem;
+}
+.skill-card:nth-child(1) .sk-name { background:linear-gradient(90deg,var(--pink),var(--violet));   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.skill-card:nth-child(2) .sk-name { background:linear-gradient(90deg,var(--yellow),var(--orange)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.skill-card:nth-child(3) .sk-name { background:linear-gradient(90deg,var(--teal),#00b4d8);         -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+/* Skill pills */
+.skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.pill {
+  font-size:     0.9rem;
+  font-weight:   500;
+  padding:       0.4rem 1rem;
+  border-radius: 50px;
+  transition:    all 0.25s;
+  cursor:        default;
+}
+
+.skill-card:nth-child(1) .pill { background:rgba(247,37,133,0.1); color:rgba(247,37,133,0.9); border:1px solid rgba(247,37,133,0.2); }
+.skill-card:nth-child(2) .pill { background:rgba(255,190,11,0.1);  color:rgba(255,190,11,0.9);  border:1px solid rgba(255,190,11,0.25); }
+.skill-card:nth-child(3) .pill { background:rgba(6,214,160,0.08);  color:rgba(6,214,160,0.9);   border:1px solid rgba(6,214,160,0.2); }
+
+.skill-card:nth-child(1) .pill:hover { background:linear-gradient(90deg,var(--pink),var(--violet));   color:#fff; border-color:transparent; box-shadow:0 0 16px rgba(247,37,133,0.4); }
+.skill-card:nth-child(2) .pill:hover { background:linear-gradient(90deg,var(--yellow),var(--orange)); color:#fff; border-color:transparent; box-shadow:0 0 16px rgba(255,190,11,0.4); }
+.skill-card:nth-child(3) .pill:hover { background:linear-gradient(90deg,var(--teal),#00b4d8);         color:#fff; border-color:transparent; box-shadow:0 0 16px rgba(6,214,160,0.4); }
