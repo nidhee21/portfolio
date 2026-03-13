@@ -67,46 +67,6 @@ portfolio/
 
 ---
 
-## 🚀 Run Locally
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/nidhee21/portfolio.git
-
-# 2. Navigate into the folder
-cd portfolio
-
-# 3. Open in browser
-open index.html
-# or just drag index.html into your browser
-```
-
-No build steps. No installs. Just open and go. ✅
-
----
-
-## 🏅 Highlights
-
-```
-📊 SGPA           →  9.0 / 10
-☕ NPTEL Java      →  94% · Gold + Elite
-🥈 Java Quiz       →  2nd Place (Inter-department)
-🚀 SIH 2025        →  Smart India Hackathon Participant
-🔐 Cybersecurity   →  Certified in Basics of Cybersecurity
-```
-
----
-
-## 🔧 Skills
-
-**Programming** → `C/C++` `Java` `Python` `HTML` `CSS` `SQL`
-
-**Security Tools** → `Kali Linux` `Nmap` `Metasploit` `Splunk` `TryHackMe` `HackTheBox`
-
-**Networking** → `TCP/IP` `DNS` `HTTP` `Port Scanning` `Packet Analysis`
-
----
-
 ## 📬 Contact
 
 Have a project idea, opportunity, or just want to talk cybersecurity?
