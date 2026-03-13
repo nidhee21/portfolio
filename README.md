@@ -79,7 +79,7 @@ Have a project idea, opportunity, or just want to talk cybersecurity?
 
 <div align="center">
 
-Made with 💻 + ☕ by **Nidhee Rajendra Jadhav**
+Made by **Nidhee Rajendra Jadhav**
 
 *© 2025 · Mumbai, India*
 
