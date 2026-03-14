@@ -1,0 +1,79 @@
+/* ============================================
+   nav.css — Navigation Bar
+   ============================================ */
+
+nav {
+  position:        fixed;
+  top: 0; left: 0; right: 0;
+  z-index:         500;
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding:         1.2rem 4rem;
+  background:      rgba(19,10,46,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom:   1px solid rgba(76,201,240,0.1);
+}
+
+.nav-logo {
+  font-family:     var(--display);
+  font-size:       1.7rem;
+  color:           var(--white);
+  text-decoration: none;
+  letter-spacing:  -0.02em;
+}
+
+.nav-links {
+  display:    flex;
+  gap:        2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size:       0.95rem;
+  font-weight:     500;
+  letter-spacing:  0.1em;
+  text-transform:  uppercase;
+  color:           rgba(255,255,255,0.85);
+  transition:      color 0.2s;
+  position:        relative;
+}
+
+.nav-links a::after {
+  content:    '';
+  position:   absolute;
+  bottom:     -4px;
+  left:       0;
+  width:      0;
+  height:     1px;
+  background: var(--cyan);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover             { color: var(--cyan); }
+.nav-links a:hover::after      { width: 100%; }
+
+/* Hamburger (mobile only) */
+.hamburger {
+  display:    none;
+  flex-direction: column;
+  gap:        5px;
+  cursor:     pointer;
+  background: none;
+  border:     none;
+  padding:    4px;
+}
+
+.hamburger span {
+  display:       block;
+  width:         25px;
+  height:        2px;
+  background:    var(--white);
+  border-radius: 2px;
+  transition:    all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
