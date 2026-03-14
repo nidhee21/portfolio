@@ -87,14 +87,7 @@
   box-shadow:      0 0 40px rgba(76,201,240,0.08), 0 20px 60px rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
 }
-.t-row {
-  display:       flex;
-  gap:           0.3rem;
-  white-space:   nowrap;
-  padding:       0.05rem 0;
-  overflow:      hidden;
-  text-overflow: ellipsis;
-}
+.t-row{display:flex;gap:0.3rem;white-space:nowrap;padding:0.05rem 0;overflow:visible;}
 .terminal-bar {
   background:    rgba(255,255,255,0.06);
   border-bottom: 1px solid rgba(255,255,255,0.07);
