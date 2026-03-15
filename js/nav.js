@@ -12,7 +12,6 @@ function closeMenu() {
   document.getElementById('navLinks').classList.remove('open');
 }
 
-// Observe ALL animation classes
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -22,8 +21,3 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0, rootMargin: '0px' });
 
 document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => obs.observe(el));
-
-// Fallback
-setTimeout(() => {
-  document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => el.classList.add('visible'));
-}, 0);
