@@ -90,13 +90,44 @@ section {
   z-index:        0;
 }
 
-/* Fade-up animation (always visible, observer adds .visible) */
-.fade-up         { opacity: 1; transform: none; }
-.fade-up.visible { opacity: 1; transform: none; }
-.delay-1 {} .delay-2 {} .delay-3 {}
 
 /* Touch device: restore cursor */
 @media (hover: none), (pointer: coarse) {
   html, body, * { cursor: auto !important; }
   .cursor-blob, .cursor-dot { display: none !important; }
 }
+
+/* ── SCROLL SLIDE IN ANIMATIONS ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.45s; }

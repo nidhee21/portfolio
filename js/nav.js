@@ -2,7 +2,6 @@
    nav.js — Hamburger Menu & Scroll Observer
    ============================================ */
 
-// Hamburger toggle
 function toggleMenu() {
   document.getElementById('hamburger').classList.toggle('open');
   document.getElementById('navLinks').classList.toggle('open');
@@ -13,14 +12,18 @@ function closeMenu() {
   document.getElementById('navLinks').classList.remove('open');
 }
 
-// Scroll fade-in observer
+// Observe ALL animation classes
 const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0, rootMargin: '0px' });
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => obs.observe(el));
 
-// Fallback: ensure everything is visible after 500ms
+// Fallback
 setTimeout(() => {
-  document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-}, 500);
+  document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => el.classList.add('visible'));
+}, 800);
