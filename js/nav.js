@@ -26,4 +26,4 @@ document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => o
 // Fallback
 setTimeout(() => {
   document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => el.classList.add('visible'));
-}, 100);
+}, 0);
