@@ -19,11 +19,11 @@ const obs = new IntersectionObserver(entries => {
       e.target.classList.add('visible');
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0, rootMargin: '0px' });
 
 document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => obs.observe(el));
 
 // Fallback
 setTimeout(() => {
   document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => el.classList.add('visible'));
-}, 800);
+}, 100);
